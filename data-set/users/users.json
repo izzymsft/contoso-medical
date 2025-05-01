@@ -1,32 +1,36 @@
 [
   {
+    "id": "3001",
     "user_id": "3001",
     "first_name": "Ava",
     "last_name": "Mitchell",
     "email": "ava.mitchell@contosohealth.com",
     "groups": ["patient"],
-    "caregivers": ["4001"],
-    "medical_providers": ["5001"]
+    "caregivers": ["4001", "4002"],
+    "medical_providers": ["5001", "5002", "5003"]
   },
   {
+    "id": "3002",
     "user_id": "3002",
     "first_name": "Liam",
     "last_name": "Hughes",
     "email": "liam.hughes@contosohealth.com",
     "groups": ["patient"],
     "caregivers": ["4002"],
-    "medical_providers": ["5002"]
+    "medical_providers": ["5001","5002"]
   },
   {
+    "id": "3003",
     "user_id": "3003",
     "first_name": "Sophia",
     "last_name": "Ward",
     "email": "sophia.ward@contosohealth.com",
     "groups": ["patient"],
     "caregivers": ["4003"],
-    "medical_providers": ["5003"]
+    "medical_providers": ["5002","5003"]
   },
   {
+    "id": "3004",
     "user_id": "3004",
     "first_name": "Noah",
     "last_name": "Griffin",
@@ -36,6 +40,7 @@
     "medical_providers": ["5004"]
   },
   {
+    "id": "3005",
     "user_id": "3005",
     "first_name": "Mia",
     "last_name": "Barnes",
@@ -45,6 +50,7 @@
     "medical_providers": ["5005"]
   },
   {
+    "id": "3006",
     "user_id": "3006",
     "first_name": "Ethan",
     "last_name": "Powell",
@@ -54,6 +60,7 @@
     "medical_providers": ["5001"]
   },
   {
+    "id": "3007",
     "user_id": "3007",
     "first_name": "Isabella",
     "last_name": "Peterson",
@@ -63,6 +70,7 @@
     "medical_providers": ["5002"]
   },
   {
+    "id": "3008",
     "user_id": "3008",
     "first_name": "Mason",
     "last_name": "Howard",
@@ -72,6 +80,7 @@
     "medical_providers": ["5003"]
   },
   {
+    "id": "3009",
     "user_id": "3009",
     "first_name": "Charlotte",
     "last_name": "Reyes",
@@ -81,6 +90,7 @@
     "medical_providers": ["5004"]
   },
   {
+    "id": "3010",
     "user_id": "3010",
     "first_name": "Logan",
     "last_name": "Sullivan",
@@ -90,6 +100,7 @@
     "medical_providers": ["5005"]
   },
   {
+    "id": "4001",
     "user_id": "4001",
     "first_name": "Grace",
     "last_name": "Nguyen",
@@ -99,6 +110,7 @@
     "medical_providers": []
   },
   {
+    "id": "4002",
     "user_id": "4002",
     "first_name": "Elijah",
     "last_name": "Lee",
@@ -108,6 +120,7 @@
     "medical_providers": []
   },
   {
+    "id": "4003",
     "user_id": "4003",
     "first_name": "Zoe",
     "last_name": "Kim",
@@ -117,6 +130,7 @@
     "medical_providers": []
   },
   {
+    "id": "4004",
     "user_id": "4004",
     "first_name": "Sebastian",
     "last_name": "Patel",
@@ -126,6 +140,7 @@
     "medical_providers": []
   },
   {
+    "id": "4005",
     "user_id": "4005",
     "first_name": "Chloe",
     "last_name": "Ali",
@@ -135,6 +150,7 @@
     "medical_providers": []
   },
   {
+    "id": "5001",
     "user_id": "5001",
     "first_name": "Daniel",
     "last_name": "Green",
@@ -144,6 +160,7 @@
     "medical_providers": []
   },
   {
+    "id": "5002",
     "user_id": "5002",
     "first_name": "Ella",
     "last_name": "Baker",
@@ -153,6 +170,7 @@
     "medical_providers": []
   },
   {
+    "id": "5003",
     "user_id": "5003",
     "first_name": "Benjamin",
     "last_name": "Reed",
@@ -162,6 +180,7 @@
     "medical_providers": []
   },
   {
+    "id": "5004",
     "user_id": "5004",
     "first_name": "Scarlett",
     "last_name": "Morgan",
@@ -171,6 +190,7 @@
     "medical_providers": []
   },
   {
+    "id": "5005",
     "user_id": "5005",
     "first_name": "Henry",
     "last_name": "Perry",
@@ -180,6 +200,7 @@
     "medical_providers": []
   },
   {
+    "id": "6001",
     "user_id": "6001",
     "first_name": "Natalie",
     "last_name": "Cooper",
@@ -189,6 +210,7 @@
     "medical_providers": []
   },
   {
+    "id": "6002",
     "user_id": "6002",
     "first_name": "Owen",
     "last_name": "Bell",
@@ -198,6 +220,7 @@
     "medical_providers": []
   },
   {
+    "id": "6003",
     "user_id": "6003",
     "first_name": "Aria",
     "last_name": "Murphy",
@@ -207,21 +230,23 @@
     "medical_providers": []
   },
   {
+    "id": "6004",
     "user_id": "6004",
     "first_name": "Jackson",
     "last_name": "Rogers",
     "email": "jackson.rogers@contosohealth.com",
-    "groups": ["hospital-admin"],
-    "caregivers": [],
-    "medical_providers": []
+    "groups": ["hospital-admin", "caregiver", "patient"],
+    "caregivers": ["6005"],
+    "medical_providers": ["6005"]
   },
   {
+    "id": "6005",
     "user_id": "6005",
     "first_name": "Lily",
     "last_name": "Bailey",
     "email": "lily.bailey@contosohealth.com",
-    "groups": ["hospital-admin"],
-    "caregivers": [],
-    "medical_providers": []
+    "groups": ["hospital-admin", "caregiver", "patient"],
+    "caregivers": ["6004"],
+    "medical_providers": ["6004"]
   }
 ]
