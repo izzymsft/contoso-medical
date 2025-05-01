@@ -1,7 +1,11 @@
 import os
+import re
 from typing import Any, Iterable, Dict
 from azure.cosmos import CosmosClient, DatabaseProxy, ContainerProxy, PartitionKey
 
+def remove_non_alphanumeric(input_str):
+    # Use re.sub() to remove all non-alphanumeric characters
+    return re.sub(r'[\W_]', '', input_str)
 
 class CosmosDbUtils:
     def __init__(self, collection: str):
