@@ -1,0 +1,11 @@
+# Azure Dependencies
+azure-cosmos
+azure-identity
+redis
+
+# Data models dependencies
+pydantic
+
+# FastAPI & MCP dependencies
+mcp[cli]
+fastapi

@@ -1,0 +1,41 @@
+[
+  { "id": "301", "record_id": "301", "patient_id": "3001", "record_type": "vision_test", "details": "The vision test was 20/30" },
+  { "id": "302", "record_id": "302", "patient_id": "3001", "record_type": "cmp", "details": "The ferritin level was 146.4 ng/mL" },
+  { "id": "303", "record_id": "303", "patient_id": "3001", "record_type": "blood_pressure", "details": "Blood pressure measured 133 over 71 mmHg" },
+
+  { "id": "304", "record_id": "304", "patient_id": "3002", "record_type": "cholesterol", "details": "Total cholesterol was 207 mg/dL" },
+  { "id": "305", "record_id": "305", "patient_id": "3002", "record_type": "cmp", "details": "The ferritin level was 118.3 ng/mL" },
+  { "id": "306", "record_id": "306", "patient_id": "3002", "record_type": "vision_test", "details": "The vision test was 20/20" },
+
+  { "id": "307", "record_id": "307", "patient_id": "3003", "record_type": "cmp", "details": "The ferritin level was 112.0 ng/mL" },
+  { "id": "308", "record_id": "308", "patient_id": "3003", "record_type": "cbc", "details": "The haemoglobin level was 16.1 g/dL" },
+  { "id": "309", "record_id": "309", "patient_id": "3003", "record_type": "vision_test", "details": "The vision test was 20/30" },
+
+  { "id": "310", "record_id": "310", "patient_id": "3004", "record_type": "blood_pressure", "details": "Blood pressure measured 131 over 77 mmHg" },
+  { "id": "311", "record_id": "311", "patient_id": "3004", "record_type": "vision_test", "details": "The vision test was 20/30" },
+  { "id": "312", "record_id": "312", "patient_id": "3004", "record_type": "cholesterol", "details": "Total cholesterol was 215 mg/dL" },
+
+  { "id": "313", "record_id": "313", "patient_id": "3005", "record_type": "cholesterol", "details": "Total cholesterol was 172 mg/dL" },
+  { "id": "314", "record_id": "314", "patient_id": "3005", "record_type": "vision_test", "details": "The vision test was 20/25" },
+  { "id": "315", "record_id": "315", "patient_id": "3005", "record_type": "cbc", "details": "The haemoglobin level was 14.6 g/dL" },
+
+  { "id": "316", "record_id": "316", "patient_id": "3006", "record_type": "blood_pressure", "details": "Blood pressure measured 121 over 75 mmHg" },
+  { "id": "317", "record_id": "317", "patient_id": "3006", "record_type": "cbc", "details": "The haemoglobin level was 14.3 g/dL" },
+  { "id": "318", "record_id": "318", "patient_id": "3006", "record_type": "cmp", "details": "The ferritin level was 198.5 ng/mL" },
+
+  { "id": "319", "record_id": "319", "patient_id": "3007", "record_type": "cmp", "details": "The ferritin level was 117.2 ng/mL" },
+  { "id": "320", "record_id": "320", "patient_id": "3007", "record_type": "blood_pressure", "details": "Blood pressure measured 114 over 67 mmHg" },
+  { "id": "321", "record_id": "321", "patient_id": "3007", "record_type": "cbc", "details": "The haemoglobin level was 13.1 g/dL" },
+
+  { "id": "322", "record_id": "322", "patient_id": "3008", "record_type": "cmp", "details": "The ferritin level was 128.7 ng/mL" },
+  { "id": "323", "record_id": "323", "patient_id": "3008", "record_type": "cholesterol", "details": "Total cholesterol was 188 mg/dL" },
+  { "id": "324", "record_id": "324", "patient_id": "3008", "record_type": "vision_test", "details": "The vision test was 20/20" },
+
+  { "id": "325", "record_id": "325", "patient_id": "3009", "record_type": "cbc", "details": "The haemoglobin level was 13.8 g/dL" },
+  { "id": "326", "record_id": "326", "patient_id": "3009", "record_type": "vision_test", "details": "The vision test was 20/30" },
+  { "id": "327", "record_id": "327", "patient_id": "3009", "record_type": "blood_pressure", "details": "Blood pressure measured 128 over 81 mmHg" },
+
+  { "id": "328", "record_id": "328", "patient_id": "3010", "record_type": "cbc", "details": "The haemoglobin level was 14.7 g/dL" },
+  { "id": "329", "record_id": "329", "patient_id": "3010", "record_type": "cmp", "details": "The ferritin level was 94.0 ng/mL" },
+  { "id": "330", "record_id": "330", "patient_id": "3010", "record_type": "blood_pressure", "details": "Blood pressure measured 108 over 63 mmHg" }
+]

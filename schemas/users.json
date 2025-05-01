@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "title": "Data structure for Contoso Health Users",
+    "description": "Represents the record of users authenticating with Contoso Health",
+    "properties": {
+      "department": {
+        "type": "string",
+        "enum": ["appliance", "cleaning", "dairy", "deli", "meat", "pharmacy", "produce", "seafood"]
+      },
+      "description": {
+        "type": "string"
+      }
+    },
+    "required": ["department", "description"],
+    "additionalProperties": false
+  }

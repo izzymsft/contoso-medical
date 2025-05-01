@@ -1,0 +1,92 @@
+[
+  {
+    "employee_id": "5001",
+    "first_name": "Daniel",
+    "last_name": "Green",
+    "email": "daniel.green@contosohealth.com",
+    "job_title": "Physician",
+    "hire_date": "2023-01-18",
+    "hourly_rate": 60.10
+  },
+  {
+    "employee_id": "5002",
+    "first_name": "Ella",
+    "last_name": "Baker",
+    "email": "ella.baker@contosohealth.com",
+    "job_title": "Nurse Practitioner",
+    "hire_date": "2005-09-16",
+    "hourly_rate": 45.19
+  },
+  {
+    "employee_id": "5003",
+    "first_name": "Benjamin",
+    "last_name": "Reed",
+    "email": "benjamin.reed@contosohealth.com",
+    "job_title": "Surgeon",
+    "hire_date": "2008-07-03",
+    "hourly_rate": 52.52
+  },
+  {
+    "employee_id": "5004",
+    "first_name": "Scarlett",
+    "last_name": "Morgan",
+    "email": "scarlett.morgan@contosohealth.com",
+    "job_title": "Radiologist",
+    "hire_date": "2020-12-30",
+    "hourly_rate": 62.23
+  },
+  {
+    "employee_id": "5005",
+    "first_name": "Henry",
+    "last_name": "Perry",
+    "email": "henry.perry@contosohealth.com",
+    "job_title": "Anesthesiologist",
+    "hire_date": "2014-04-18",
+    "hourly_rate": 100.21
+  },
+  {
+    "employee_id": "6001",
+    "first_name": "Natalie",
+    "last_name": "Cooper",
+    "email": "natalie.cooper@contosohealth.com",
+    "job_title": "Hospital Administrator",
+    "hire_date": "2020-05-27",
+    "hourly_rate": 54.57
+  },
+  {
+    "employee_id": "6002",
+    "first_name": "Owen",
+    "last_name": "Bell",
+    "email": "owen.bell@contosohealth.com",
+    "job_title": "Operations Manager",
+    "hire_date": "2018-10-15",
+    "hourly_rate": 61.52
+  },
+  {
+    "employee_id": "6003",
+    "first_name": "Aria",
+    "last_name": "Murphy",
+    "email": "aria.murphy@contosohealth.com",
+    "job_title": "HR Director",
+    "hire_date": "2024-03-24",
+    "hourly_rate": 61.57
+  },
+  {
+    "employee_id": "6004",
+    "first_name": "Jackson",
+    "last_name": "Rogers",
+    "email": "jackson.rogers@contosohealth.com",
+    "job_title": "Finance Officer",
+    "hire_date": "2023-06-17",
+    "hourly_rate": 87.33
+  },
+  {
+    "employee_id": "6005",
+    "first_name": "Lily",
+    "last_name": "Bailey",
+    "email": "lily.bailey@contosohealth.com",
+    "job_title": "Compliance Officer",
+    "hire_date": "2012-09-24",
+    "hourly_rate": 59.03
+  }
+]
