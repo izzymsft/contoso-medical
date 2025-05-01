@@ -26,3 +26,15 @@ class EmploymentRecordDao(DataExtractor):
                 return search_result
 
         return None
+
+    def update_employee_hourly_rate(self, employee_id: str, new_hourly_rate: float) -> EmploymentRecord:
+
+        patch_operations = [
+            {"op": "set", "path": "/hourly_rate", "value": new_hourly_rate}
+        ]
+
+        patched_result: dict = self.cosmos_util.patch_item(employee_id, partition_key=employee_id, patch_operations=patch_operations)
+
+        result: EmploymentRecord = self.populate_employment_record(patched_result)
+
+        return result
