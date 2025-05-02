@@ -17,19 +17,23 @@ class IzzyMCP(FastMCP):
     ):
         super().__init__(name=name, instructions=instructions, **settings)
 
-        self.client_roots  = None
-        self._register_notification_handlers()
+        self.all_tool_names: list[str] = [
+            "retrieve_facility_image",
+            "get_information",
+            "retrieve_all_patients",
+            "retrieve_all_facilities"
+        ]
 
     def _register_notification_handlers(self):
         pass
 
-    @staticmethod
-    def _get_role_tools() -> list[str]:
-        user_role = os.environ.get("USER_ROLE")
+
+    def _get_role_tools(self) -> list[str]:
+        user_role = os.environ.get("USER_ROLE", "patient")
 
         # ["hospital-admin", "caregiver", "patient"]
         tool_database: dict[str, list[str]] = {
-            "hospital-admin" : ["get_information", "retrieve_all_patients", "retrieve_all_facilities"],
+            "hospital-admin" : self.all_tool_names,
             "caregiver": ["get_information", "get_my_medical_records"],
             "patient": ["get_information", "get_my_medical_records"]
         }
@@ -38,9 +42,15 @@ class IzzyMCP(FastMCP):
 
     async def list_tools(self) -> list[MCPTool]:
 
+        context = self.get_context()
+        session = context.session
+
         filtered_tool_names = self._get_role_tools()
         filtered_tool_list: list[MCPTool] = []
         tool_list: list[MCPTool] = await super().list_tools()
+
+        logger.debug(context)
+        logger.debug(session)
 
         for current_tool in tool_list:
             if current_tool.name in filtered_tool_names:

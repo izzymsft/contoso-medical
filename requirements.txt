@@ -9,3 +9,4 @@ pydantic
 # FastAPI & MCP dependencies
 mcp[cli]
 fastapi
+pillow
