@@ -1,12 +1,14 @@
 # Azure Dependencies
 azure-cosmos
 azure-identity
-redis
+redis~=6.0.0
 
 # Data models dependencies
 pydantic
 
 # FastAPI & MCP dependencies
-mcp[cli]
+mcp[cli]==1.6.0
 fastapi
-pillow
+pillow~=11.2.1
+azure-core~=1.34.0
+python-dotenv~=1.1.0

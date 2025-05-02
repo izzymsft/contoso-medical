@@ -13,6 +13,10 @@ from shared.medical_records_dao import MedicalRecordsDao
 from shared.users_dao import UsersDao
 import base64
 
+from dotenv import load_dotenv
+
+#load_dotenv()  # take environment variables
+
 mcp = IzzyMCP("Contoso Medical MCP Service", log_level="DEBUG")
 
 
@@ -52,9 +56,9 @@ async def get_information() -> str:
     return "This service provides information about Contoso Medical patients, facilities, employees and caregivers"
 
 @mcp.tool(description="Retrieves medical records for a specific patient")
-async def get_my_medical_records(user_id: str):
+async def get_my_medical_records(patient_id: str):
     medical_records_dao = MedicalRecordsDao()
-    return medical_records_dao.get_patient_medical_records(user_id)
+    return medical_records_dao.get_patient_medical_records(patient_id)
 
 # Image Webserver is hosted from facility_images using python3 -m http.server 8000 --directory .
 @mcp.tool(description="Retrieve path for a facility image")

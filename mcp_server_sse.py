@@ -1,119 +1,74 @@
+import base64
+import os
 from random import random
 
 from mcp.server import FastMCP
 from mcp.server.fastmcp import Context
 
+from models.contoso_medical import Facility, UserRecord
+from shared.facilities_dao import FacilityDao
 from shared.mcp_base_server import IzzyMCP
+from dotenv import load_dotenv
 
-settings = {"host": "127.0.0.1", "port": 3500}
+from shared.medical_records_dao import MedicalRecordsDao
+from shared.users_dao import UsersDao
+
+load_dotenv()  # take environment variables
+
+settings = {"port": 3500}
 mcp = IzzyMCP("Contoso Medical MCP Service", log_level="DEBUG", **settings)
 
-@mcp.tool(description="Returns the Information from the Service about Contoso Medical")
-def get_information(ctx: Context) -> str:
+def get_current_file_directory() -> str:
     """
-    Returns detailed information about the services and leadership of Contoso Medical.
+    Returns the absolute path of the directory where the current Python file is located.
+
+    :return: Absolute path to the current file's directory.
     """
-    info = """
-    Welcome to Contoso Medical — Your Partner in Health and Wellness
+    return os.path.dirname(os.path.abspath(__file__))
 
-    About Us:
-    Contoso Medical is a leading healthcare provider dedicated to delivering compassionate, innovative, and high-quality care. 
-    With over 25 years of service, we support communities through a comprehensive network of hospitals, specialty clinics, 
-    urgent care centers, and telehealth platforms.
 
-    Our Services:
-    ----------------------------
-    1. Primary Care
-       - Family medicine
-       - Preventive health screenings
-       - Chronic disease management
 
-    2. Specialty Care
-       - Cardiology
-       - Oncology
-       - Neurology
-       - Endocrinology
-       - Rheumatology
+def encode_png_to_base64(file_path: str) -> str:
+    """
+    Encodes a PNG file into a Base64 string.
 
-    3. Women's Health
-       - OB/GYN services
-       - Fertility treatments
-       - Breast health
+    :param file_path: Path to the PNG file.
+    :return: Base64-encoded string of the PNG image.
+    """
+    with open(file_path, "rb") as image_file:
+        encoded_bytes = base64.b64encode(image_file.read())
+        return encoded_bytes.decode("utf-8")
 
-    4. Pediatric Care
-       - Newborn care
-       - Immunizations
-       - Pediatric specialists
+@mcp.tool(description="Retrieve all patients from Contoso Medical")
+async def retrieve_all_patients() -> list[UserRecord]:
+    dao = UsersDao()
+    return dao.get_all_users()
 
-    5. Mental Health Services
-       - Counseling and therapy
-       - Psychiatric evaluations
-       - Substance use recovery programs
+@mcp.tool(description="Retrieve all Facilities from Contoso Medical")
+async def retrieve_all_facilities() -> list[Facility]:
+    dao = FacilityDao()
+    return dao.get_all_facilities()
 
-    6. Surgical Services
-       - Minimally invasive procedures
-       - Outpatient and inpatient surgery
-       - Robotic-assisted surgery
+@mcp.tool(description="Returns information about Contoso Medical")
+async def get_information() -> str:
+    return "This service provides information about Contoso Medical patients, facilities, employees and caregivers"
 
-    7. Emergency & Urgent Care
-       - 24/7 Emergency Rooms
-       - Trauma response teams
-       - Walk-in urgent care centers
+@mcp.tool(description="Retrieves medical records for a specific patient")
+async def get_my_medical_records(patient_id: str):
+    medical_records_dao = MedicalRecordsDao()
+    return medical_records_dao.get_patient_medical_records(patient_id)
 
-    8. Virtual Care
-       - Telehealth visits
-       - Online symptom checker
-       - Prescription refills and follow-ups
-
-    9. Senior Care
-       - Geriatric specialists
-       - Assisted living coordination
-       - In-home care services
-
-    Leadership Team:
-    ----------------------------
-    - Dr. Rebecca Lin, Chief Executive Officer
-      With over 20 years of leadership in hospital administration, Dr. Lin is committed to operational excellence and patient-first innovation.
-
-    - James Thornton, Chief Operating Officer
-      A former U.S. Army medic, James brings strategic discipline and healthcare logistics experience to streamline operations.
-
-    - Dr. Nia Kapoor, Chief Medical Officer
-      A triple-board-certified physician, Dr. Kapoor champions clinical excellence and medical ethics.
-
-    - Sarah Fields, Chief Nursing Officer
-      Sarah leads all nursing teams across Contoso Medical’s network, emphasizing holistic, empathetic care.
-
-    - Carlos Ramirez, Chief Information Officer
-      With a background in health IT and cybersecurity, Carlos leads digital transformation and data governance.
-
-    - Linda Green, Chief Financial Officer
-      Linda oversees financial planning, budget efficiency, and sustainable growth.
-
-    Our Commitment:
-    ----------------------------
-    At Contoso Medical, we believe that health is a human right. We invest in patient education, research partnerships, 
-    and community wellness programs to ensure every individual has access to world-class healthcare.
-
-    Contact Us:
-    Visit us online at www.contosomedical.com or call us at 1-800-CONTOSO.
-
-    Thank you for choosing Contoso Medical — Where Compassion Meets Innovation.
+# Image Webserver is hosted from facility_images using python3 -m http.server 8000 --directory .
+@mcp.tool(description="Retrieve path for a facility image")
+def retrieve_facility_image(facility_id: str) -> str:
     """
 
+    :param facility_id: The identifier for the facility
+    :return:
+    """
+    facility_image_path = f"http://localhost:8000/{facility_id}.png"
 
-    return info
-
-
-@mcp.tool(description="Retrieves the Current Temperature in Fahrenheit for Contoso Islands")
-async def get_temperature(ctx: Context) -> float:
-    await ctx.debug(ctx.session)
-    print(ctx.request_context)
-    return random() * 95
-
-@mcp.tool(description="Calculates the Taxes for a specific amount")
-async def calculate_taxes(amount: float, ctx: Context) -> float:
-    return random() * amount
+    return facility_image_path
 
 
 if __name__ == "__main__":

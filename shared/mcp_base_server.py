@@ -21,7 +21,8 @@ class IzzyMCP(FastMCP):
             "retrieve_facility_image",
             "get_information",
             "retrieve_all_patients",
-            "retrieve_all_facilities"
+            "retrieve_all_facilities",
+            "get_my_medical_records"
         ]
 
     def _register_notification_handlers(self):
@@ -29,7 +30,7 @@ class IzzyMCP(FastMCP):
 
 
     def _get_role_tools(self) -> list[str]:
-        user_role = os.environ.get("USER_ROLE", "patient")
+        user_role = os.environ.get("USER_ROLE", "hospital-admin")
 
         # ["hospital-admin", "caregiver", "patient"]
         tool_database: dict[str, list[str]] = {
